@@ -1,0 +1,101 @@
+/* Conteneur principal */
+.row.justify-content-center {
+    min-height: 100vh;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+/* Carte du formulaire */
+.col-4 {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style des onglets */
+.nav-pills {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.nav-item {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-link.active {
+    color: #0d6efd !important;
+    background: none !important;
+}
+
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #0d6efd;
+}
+
+/* Style des formulaires */
+.form-label {
+    font-weight: 500;
+    color: #495057;
+}
+
+.form-control {
+    border-radius: 8px;
+    padding: 12px;
+    border: 2px solid #e9ecef;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: none;
+}
+
+/* Boutons */
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    background: #0d6efd;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+/* Messages supplémentaires */
+.tab-content::before {
+    content: "We're so glad to have you on board!";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tab-content::after {
+    display: block;
+    text-align: center;
+    color: #6c757d;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}

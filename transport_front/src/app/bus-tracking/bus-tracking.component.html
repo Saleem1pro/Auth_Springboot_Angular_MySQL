@@ -1,0 +1,128 @@
+<div class="container mt-4">
+    <h2>Gestion des Bus</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Total(Bus_State)</th>
+                <th>Bus Actifs</th>
+                <th>Bus Inactifs</th>
+                <th>À l'heure</th>
+                <th>En Retard</th>
+                <th>Accident</th>
+                <th>Changement ligne</th>
+                <th>Date d'Ajout</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bus of busList">
+                <td>{{ bus.id }}</td>
+                <td>{{ bus.bus_state }}</td>
+                <td>{{ bus.bus_on }}</td>
+                <td>{{ bus.bus_off }}</td>
+                <td>{{ bus.bus_on_time}}</td>
+                <td>{{ bus.bus_late }}</td>
+                <td>{{ bus.bus_on_accident}}</td>
+                <td>{{ bus.change_of_line }}</td>
+                <td>{{ bus.date }}</td>
+                <!--
+                <td>
+                    <button class="btn btn-warning btn-sm me-2" (click)="editBus(bus)">✏️</button>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+    <pre>
+
+        HANAYA
+        HANAYA
+        HANAYA
+        HANAYA
+    </pre>
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>{{ selectedBus ? 'Modifier Bus' : 'Ajouter Nouveau Bus' }}</h4>
+        </div>
+        <div class="card-body">
+            <form (submit)="selectedBus ? updateBus() : addBus()">
+                <div class="row g-3">
+                    <!-- Champ État -->
+                    <div class="col-md-2">
+                        <label class="form-label">Total(Bus_State)</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busStateValue" 
+                            name="bus_state" required>
+                    </div>
+
+                    <!-- Champ Bus Actifs -->
+                    <div class="col-md-2">
+                        <label class="form-label">Bus Actifs</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busOnValue" 
+                            name="bus_on" required>
+                    </div>
+
+                    <!-- Champ Bus Inactifs -->
+                    <div class="col-md-2">
+                        <label class="form-label">Bus Inactifs</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busOffValue" 
+                            name="bus_off" required>
+                    </div>
+
+                    <!-- Champ À l'heure -->
+                    <div class="col-md-2">
+                        <label class="form-label">À l'heure</label>
+                        <input type="number" class="form-control" 
+                        [(ngModel)]="busOnTimeValue" 
+                        name="bus_on_time" required>
+                            
+                    </div>
+
+                    <!-- Champ Retard -->
+                    <div class="col-md-2">
+                        <label class="form-label">En Retard</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busLateValue" 
+                            name="bus_late">
+                    </div>
+
+                    <!-- Champ Accident -->
+                    <div class="col-md-2">
+                        <label class="form-label">Accident</label>
+                        <input type="number" class="form-control" 
+                        [(ngModel)]="busAccidentValue" 
+                        name="bus_on_accident">                             
+                    </div>
+
+                    <!-- Champ Changement ligne -->
+                    <div class="col-md-2">
+                        <label class="form-label">Changement ligne</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="changeLineValue" 
+                            name="change_of_line">
+                    </div>
+
+                    <!-- Champ Date d'Ajout -->
+                    <div class="col-md-2">
+                        <label class="form-label">Date d'ajout</label>
+                        <input type="datetime-local" class="form-control" 
+                            [(ngModel)]="dateValue" 
+                            name="date" disabled>
+                    </div>
+
+                    <!-- Bouton de soumission -->
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary w-100" 
+                            [disabled]="isSaving"
+                            >
+                            {{ selectedBus ? 'Mettre à jour' : isSaving ? 'Envoi...' : 'Ajouter' }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-4">
+        <ul class="nav nav-pills nav justify-content-center" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button [ngClass]="active == 'login' ? 'nav-link active' : 'nav-link'" 
+                        id="tab-login"
+                        (click)="onLoginTab()">Login</button>
+            </li>
+            
+        </ul>
+
+        <div class="tab-content">
+            <!-- Formulaire Login -->
+            <div [ngClass]="active == 'login' ? 'tab-pane fade show active' : 'tab-pane fade'"> 
+                <form (ngSubmit)="onSubmitLogin()" #loginForm="ngForm">
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="loginName">Username</label>
+                        <input class="form-control" type="text" name="login" 
+                               [(ngModel)]="login" required>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="loginPassword">Password</label>
+                        <div class="position-relative">
+                            <input class="form-control" [type]="showLoginPassword ? 'text' : 'password'" name="password"
+                                   [(ngModel)]="password" required #passwordInput="ngModel">
+                            <button type="button" class="btn btn-link position-absolute end-0 top-50 translate-middle-y me-2"
+                                    (click)="toggleShowLoginPassword()" aria-label="Show password">
+                                <i class="fas" [class.fa-eye]="!showLoginPassword" [class.fa-eye-slash]="showLoginPassword"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block mb-4" 
+                            [disabled]="!loginForm.valid">SignIn</button>
+                </form><button class="btn btn-primary btn-block mb-4" (click)="onRegister()">If still not registered</button>
+            </div>
+        </div>
+    </div>
+</div>

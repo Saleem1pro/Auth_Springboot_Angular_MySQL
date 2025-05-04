@@ -1,0 +1,14 @@
+/* bus-tracking.component.css */
+.table th {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .card {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
