@@ -10,7 +10,7 @@ register
 ![image](pics/register.png)
 
 welcome 
-![image](pics/welcome.png)
+![image](pics/welcomePage.png)
 
 bus tracking page 1
 ![image](pics/BusTracking/BusTrackingPage1.png)
