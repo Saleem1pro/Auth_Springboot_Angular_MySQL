@@ -40,4 +40,4 @@ reclamation page 3
 ![image](pics/Reclamation/ReclamationPage3.png)
 
 
-this what the projet is like
+this is what the projet is like
