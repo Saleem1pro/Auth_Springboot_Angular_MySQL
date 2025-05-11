@@ -1,88 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-<div class="container mt-4">
-<table class="table table-striped">
-  <thead>
-    <tr>
-        <th>ID</th>
-        <th>Numéro</th>
-        <th>Nombre de Bus</th>
-        <th>Bus Actifs</th>
-        <th>Bus Inactifs</th>
-        <th>Date d'Ajout</th>
-    </tr>
-</thead>
-    <tr *ngFor="let line of lineInfosList">
-      <td>{{ line.id }}</td>
-      <td>{{ line.line_number }}</td>
-      <td>{{ line.number_of_buses }}</td>
-      <td>{{ line.working }}</td>
-      <td>{{ line.not_working }}</td>
-      <td>{{ line.date }}</td>
-    </tr>
-  </table>
+<div class="container" appClickOutside  (clickOutside)="unCheck()">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <button class="feature-btn" [class.active]="showList" (click)="onListInfo()">
+            <i class="fa fa-list"></i>
+            <span>List of Lines</span>
+        </button>
+        <button class="feature-btn" [class.active]="showForm" (click)="onAddLineInfo()">
+            <i class="fas fa-plus-circle me-2"></i>
+            <span>Add Line Info</span> 
+        </button>
+        <button class="feature-btn"  (click)="onReturn()">
+        <i class="fa fa-arrow-left"></i>
+        <span>Welcome Page</span>
+    </button>
+    </nav>
 
-  <div class="card mt-4">
-    <div class="card-header">
-        <h4>{{ selectedLine ? 'Ajouter Information de Line' : 'Ajouter Information de Line' }}</h4>
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <!-- Arrière-plan -->
+        <div class="network-background"></div>
+
+        <!-- Composants conditionnels -->
+        <app-list-lines *ngIf="showList"></app-list-lines>
+        <app-add-infos *ngIf="showForm"></app-add-infos>
     </div>
-    <div class="card-body">
-        <form (submit)="selectedLine ? updateLine() : addLine()">
-            <div class="row g-3">
-
-                <!-- Champ Bus Inactifs -->
-                <div class="col-md-2">
-                    <label class="form-label">Numéro de Ligne</label>
-                    <input type="number" class="form-control" 
-                        [(ngModel)]="lineNumberValue" 
-                        name="line_number" required>
-                </div>
-
-                <!-- Champ À l'heure -->
-                <div class="col-md-2">
-                    <label class="form-label">Nombre de Bus</label>
-                    <input type="number" class="form-control" 
-                    [(ngModel)]="numberOfBusesValue" 
-                    name="number_of_buses" required>
-                        
-                </div>
-
-                <!-- Champ Retard -->
-                <div class="col-md-2">
-                    <label class="form-label">Working</label>
-                    <input type="number" class="form-control" 
-                        [(ngModel)]="workingValue" 
-                        name="working">
-                </div>
-
-                <!-- Champ Accident -->
-                <div class="col-md-2">
-                    <label class="form-label">NotWorking</label>
-                    <input type="number" class="form-control" 
-                    [(ngModel)]="notWorkingValue" 
-                    name="not_working">                             
-                </div>
-                
-
-                <!-- Champ Date d'Ajout -->
-                <div class="col-md-2">
-                    <label class="form-label">Date d'ajout</label>
-                    <input type="datetime-local" class="form-control" 
-                        [(ngModel)]="dateValue" 
-                        name="date" disabled>
-                </div>
-
-                <!-- Bouton de soumission -->
-                <div class="col-md-2 d-flex align-items-end">
-                    <button 
-                        type="submit" 
-                        class="btn btn-primary w-100" 
-                        [disabled]="isSaving"
-                        >
-                        {{ selectedLine ? 'Mettre à jour' : isSaving ? 'Envoi...' : 'Ajouter' }}
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
 </div>

@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 public class LineInfos {
 
     @Column(name = "line_number")
-    private int lineNumber ;
+    private String lineNumber ;
 
     @Column(name = "number_of_buses")
     private int numberOfBuses ;

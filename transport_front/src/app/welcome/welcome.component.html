@@ -1,8 +1,26 @@
-<form>
-<div>
-<button class="btn btn-primary btn-block mb-4" (click)="onBusTracking()">BusTracking</button>
-<button class="btn btn-primary btn-block mb-4" (click)="onLineInfos()">LineInfos</button>
-<button class="btn btn-primary btn-block mb-4" (click)="onReclamation()">Reclamation</button>
-</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-</form>
+<div class="main-container">
+<div class="first">
+        <button class="logout-btn" (click)="onLogOut()">
+            <i class="fas fa-door-open"></i>
+            <span>Log out</span>
+        </button>
+</div>
+    <div class="feature-grid">
+        <button class="feature-btn" (click)="onBusTracking()">
+            <i class="fas fa-bus"></i>
+            <span>Bus Tracking</span>
+        </button>
+
+        <button class="feature-btn" (click)="onLineInfos()">
+            <i class="fas fa-route"></i>
+            <span>Line Infos</span>
+        </button>
+
+        <button class="feature-btn" (click)="onReclamation()">
+            <i class="fas fa-comment-dots"></i>
+            <span>Reclamation</span>
+        </button>
+    </div>
+</div>

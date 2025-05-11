@@ -10,7 +10,10 @@ import java.time.LocalDate;
 public class ReclamationDTO {
     private Long id;
     private LocalDate date;
-    private String clientInfo;
+    private String fullName;
+    private String CIN;
+    private String phoneNumber;
+    private String ticketNumber;
     private String state;
     private String title;
     private String description;

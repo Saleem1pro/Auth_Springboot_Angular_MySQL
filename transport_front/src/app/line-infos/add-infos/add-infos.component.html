@@ -1,0 +1,116 @@
+
+<div class="container mt-4">
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>{{ 'Add Info Line' }}</h4>
+        </div>
+        <div class="card-body">
+            <form (submit)="addLine()">
+                <div class="row g-3">
+    
+                    <!-- Champ Bus Inactifs -->
+                    <div class="col-md-2">
+                        <label class="form-label">Number of Line</label>
+                            <select class="form-control" 
+                                [(ngModel)]="lineNumberValue" 
+                                name="lineNumber" 
+                                required>
+                                <option>-- Select a Line Number --</option>
+                                <option value="L201B" name="lineNumber">L201B - CHATEAU SALAM - ZONE ECONOMIQUE</option>
+                                <option value="AE" name="lineNumber">AE - AEROPORT-GARE AGDAL</option>
+                                <option value="L32H" name="lineNumber">L32H - BAB HAD- HARHOURA</option>
+                                <option value="L37B" name="lineNumber">L37B - MASSIRA-MILANO-YOUSSOUFIA</option>
+                                <option value="L1" name="lineNumber">L1 - BAB CHELLAH-DOHA</option>
+                                <option value="L2" name="lineNumber">L2 - BAB CHELLAH-KARIA</option>
+                                <option value="L3" name="lineNumber">L3 - BAB CHELLAH-SIDI TAIBI</option>
+                                <option value="L4" name="lineNumber">L4 - BAB CHELLAH-ZERDAL</option>
+                                <option value="L5" name="lineNumber">L5 - BAB CHELLAH-SIDI EDDAOUI</option>
+                                <option value="L6" name="lineNumber">L6 - HIZB ESTIKLAL-MARCHE DE GROS TEMARA</option>
+                                <option value="L7" name="lineNumber">L7 - BAB HAD-MARCHE DE GROS TEMARA</option>
+                                <option value="L8" name="lineNumber">L8 - BAB HAD-AIN AOUDA</option>
+                                <option value="L9" name="lineNumber">L9 - KARIA-AGDAL</option>
+                                <option value="L10" name="lineNumber">L10 - SALA AL JADIDA-HASSAN</option>
+                                <option value="L21" name="lineNumber">L21 - BAB CHELLAH-SALA AL JADIDA</option>
+                                <option value="L22" name="lineNumber">L22 - BAB CHELLAH-BOUKNADEL</option>
+                                <option value="L23" name="lineNumber">L23 - BAB CHELLAH-SIDI EDDAOUI</option>
+                                <option value="L24" name="lineNumber">L24 - BAB CHELLAH-MAAMOURA</option>
+                                <option value="L25" name="lineNumber">L25 - BAB CHELLAH-BAYT ALMOUSTAKBAL</option>
+                                <option value="L26" name="lineNumber">L26 - BAB CHELLAH-MAZZA</option>
+                                <option value="L29" name="lineNumber">L29 - DOUDAR JDID-SHOUL</option>
+                                <option value="L30" name="lineNumber">L30 - GARE RABAT AGDAL-AL WIFAQ</option>
+                                <option value="L31" name="lineNumber">L31 - BAB HAD-MERS EL KHEIR</option>
+                                <option value="L33" name="lineNumber">L33 - BAB HAD-KASBAH PLAGE</option>
+                                <option value="L34" name="lineNumber">L34 - BAB EL HAD - AIN ATIQ</option>
+                                <option value="L35" name="lineNumber">L35 - BAB HAD-EL MAGHREB ARABI</option>
+                                <option value="L36" name="lineNumber">L36 - BAB HAD-EL MAGHREB ARABI</option>
+                                <option value="L37" name="lineNumber">L37 - AIN ATIQ-YOUSSOUFIA</option>
+                                <option value="L38" name="lineNumber">L38 - TAMESNA-BAB EL HAD</option>
+                                <option value="L39" name="lineNumber">L39 - ANNOUR-HOPITAUX SOUISSI</option>
+                                <option value="L40" name="lineNumber">L40 - OUM AZZA - AIN AOUDA.</option>
+                                <option value="L101" name="lineNumber">L101 - HAY ENNAHDA-HAY FATH</option>
+                                <option value="L102" name="lineNumber">L102 - ZONE INDUSTRIELLE - PLACE D'ITALIE</option>
+                                <option value="L104" name="lineNumber">L104 - HAY FATH-YOUSSOUFIA</option>
+                                <option value="L106" name="lineNumber">L106 - HAY FATH-ABDELMOUMEN</option>
+                                <option value="L107" name="lineNumber">L107 - HAY EL FATH - BAB CHELLAH</option>
+                                <option value="L108" name="lineNumber">L108 - HAY ENNAHDA-ABDELMOUMEN</option>
+                                <option value="L201" name="lineNumber">L201 - ZERDAL-TECHNOPOLIS</option>
+                                <option value="L202" name="lineNumber">L202 - DOUDAR JDID-UNIV.MOHAMED V SALE</option>
+                                <option value="L303" name="lineNumber">L303 - AIN AOUDA-MAGREB ARABI</option>
+                                <option value="L306" name="lineNumber">L306 - MAGREB EL ARABI-COMMUNE SEBBAH</option>
+
+                            </select>
+                    </div>
+    
+                    <!-- Champ À l'heure -->
+                    <div class="col-md-2">
+                        <label class="form-label">Numbre of Buses</label>
+                        <input type="number" class="form-control" 
+                        [(ngModel)]="numberOfBusesValue" 
+                        name="numberOfBuses" required>
+                            
+                    </div>
+    
+                    <!-- Champ Retard -->
+                    <div class="col-md-2">
+                        <label class="form-label">Working Buses</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="workingValue" 
+                            name="working">
+                    </div>
+    
+                    <!-- Champ Accident -->
+                    <div class="col-md-2">
+                        <label class="form-label">Not Working Buses</label>
+                        <input type="number" class="form-control" 
+                        [(ngModel)]="notWorkingValue" 
+                        name="notWorking">                             
+                    </div>
+                    
+    
+                    <!-- Champ Date d'Ajout -->
+                    <div class="col-md-2">
+                        <label class="form-label">Adding Time</label>
+                        <input type="datetime-local" class="form-control" 
+                            [(ngModel)]="dateValue" 
+                            name="date" disabled>
+                    </div>
+    
+                    <!-- Bouton de soumission -->
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary w-100" 
+                            [disabled]="isSaving"
+                            >
+                            {{ selectedLine ? 'Update' : isSaving ? 'Sending...' : 'Add' }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div><br>
+</div>
+
+  
+    

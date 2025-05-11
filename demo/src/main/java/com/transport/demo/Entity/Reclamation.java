@@ -17,10 +17,12 @@ public class Reclamation {
     private Long id;
 
     private LocalDateTime date;
-    @Column(name = "client_info")
-    private String clientInfo;
+    @Column(name = "clientInfo")
+    private String fullName;
+    private String CIN;
+    private String phoneNumber;
+    private String ticketNumber;
     private String state;
-    private String title;
     private String description;
     @ManyToOne
     @JoinColumn(name = "user_id") // Nom de la colonne en base

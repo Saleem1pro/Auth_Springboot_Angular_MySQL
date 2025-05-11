@@ -1,14 +1,67 @@
-/* bus-tracking.component.css */
-.table th {
-    background-color: #343a40;
-    color: white;
-  }
-  
-  .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-  }
-  
-  .card {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(255, 255, 255, 0.9); /* Ombre visible */
+  display: flex; /* Active Flexbox */
+  flex-direction: column; /* Alignement vertical */
+  gap: 10px; /* Espace entre les boutons */
+}
+
+/* line-infos.component.css */
+.container {
+  display: flex; 
+  height: 100vh;
+}
+ 
+.feature-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.feature-btn {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem; /* Réduit le padding */
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Prend toute la largeur */
+  min-height: auto; /* Supprime la hauteur fixe */
+  margin-bottom: 0; /* Désactive la marge */
+  border: none;
+}
+
+.feature-btn i {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-btn span {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  /* Nécessaire pour positionner l'arrière-plan */
+}
+
+
+
+app-list-trackings,
+app-add-tracking {
+  position: relative;
+  z-index: 1;
+  /* Met le contenu au-dessus de l'arrière-plan */
+  background: rgba(255, 255, 255, 0.9);
+  /* Fond semi-transparent pour lisibilité */
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}

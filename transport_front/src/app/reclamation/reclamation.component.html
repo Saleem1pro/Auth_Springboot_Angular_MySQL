@@ -1,110 +1,29 @@
-<div class="container mt-4">
-    <h2>Gestion des Reclamations</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Info Client</th>
-                <th>description</th>
-                <th>État</th>
-                <th>Titre</th>
-                <th>Date d'Ajout</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let reclamation of reclamationList">
-                <td>{{ reclamation.id }}</td>
-                <td>{{ reclamation.client_info }}</td>
-                <td>{{ reclamation.description }}</td>
-                <td>{{ reclamation.state }}</td>
-                <td>{{ reclamation.title}}</td>
-                <td>{{ reclamation.date }}</td>
-                <!--
-                <td>
-                    <button class="btn btn-warning btn-sm me-2" (click)="editBus(bus)">✏️</button>
-                </td>-->
-            </tr>
-        </tbody>
-    </table>
-    <pre>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-        HANAYA
-        HANAYA
-        HANAYA
-        HANAYA
-    </pre>
-    <div class="card mt-4">
-        <div class="card-header">
-            <h4>{{ selectedReclamation ? 'Ajouter Reclamation' : 'Ajouter Reclamation Encore' }}</h4>
-        </div>
-        <div class="card-body">
-            <form (submit)="selectedReclamation ? updateReclamation() : addReclamation()">
-                <div class="row g-3">
-                    <!-- Champ État -->
-                    <div class="col-md-2">
-                        <label class="form-label">Info Client</label>
-                        <input type="text" class="form-control" 
-                            [(ngModel)]="clientInfoValue" 
-                            name="client_info" required>
-                    </div>
+<div class="container" appClickOutside  (clickOutside)="unCheck()">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <button class="feature-btn" [class.active]="showList" (click)="onListReclamations()">
+            <i class="fa fa-list"></i>
+            <span>Liste of Reclamations</span>
+        </button>
+        <button class="feature-btn" [class.active]="showForm" (click)="onAddReclamation()">
+            <i class="fas fa-plus-circle me-2"></i>
+            <span>Add Reclamation</span> 
+        </button>
+        <button class="feature-btn"  (click)="onReturn()">
+        <i class="fa fa-arrow-left"></i>
+        <span>Welcome Page</span>
+    </button>
+    </nav>
 
-                    <!-- Champ Bus Actifs -->
-                    <div class="col-md-2">
-                        <label class="form-label">description</label>
-                        <input type="text" class="form-control" 
-                            [(ngModel)]="DescriptionValue" 
-                            name="description" required>
-                    </div>
+    <!-- Contenu Principal -->
+    <div class="main-content">
+        <!-- Arrière-plan -->
+        <div class="network-background"></div>
 
-                    <!-- Champ Bus Inactifs -->
-                    <!-- Champ Bus Inactifs 
-
-                    <div class="col-md-2">
-                        <label class="form-label">État</label>
-                        <select class="form-control" 
-                                [(ngModel)]="stateValue" 
-                                name="state" 
-                                required>
-                            <option value="traité" name="state">Traité</option>
-                            <option value="non traité" name="state">Non traité</option>
-                        </select>
-                    </div>
-                    -->
-
-                    <div class="col-md-2">
-                        <label class="form-label">État</label>
-                        <input type="text" class="form-control" 
-                            [(ngModel)]="stateValue" 
-                            name="state" required>
-                    </div>
-                    <!-- Champ À l'heure -->
-                    <div class="col-md-2">
-                        <label class="form-label">Titre</label>
-                        <input type="text" class="form-control" 
-                            [(ngModel)]="titleValue" 
-                            name="title" required>
-                    </div>
-
-                    <!-- Champ Date d'Ajout -->
-                    <div class="col-md-2">
-                        <label class="form-label">Date d'ajout</label>
-                        <input type="datetime-local" class="form-control" 
-                            [(ngModel)]="dateValue" 
-                            name="date" disabled>
-                    </div>
-
-                    <!-- Bouton de soumission -->
-                    <div class="col-md-2 d-flex align-items-end">
-                        <button 
-                            type="submit" 
-                            class="btn btn-primary w-100" 
-                            [disabled]="isSaving"
-                            >
-                            {{ selectedReclamation ? 'Mettre à jour' : isSaving ? 'Envoi...' : 'Ajouter' }}
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+        <!-- Composants conditionnels -->
+        <app-list-reclamations *ngIf="showList"></app-list-reclamations>
+        <app-add-reclamation *ngIf="showForm"></app-add-reclamation>
     </div>
 </div>

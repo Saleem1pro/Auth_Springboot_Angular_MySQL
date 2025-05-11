@@ -43,7 +43,6 @@ public class BusTracking {
     private int changeofLine;
 
     @Column(name = "date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING) // Format ISO : "2023-12-25T15:30:00"
     private LocalDateTime Date;
 
     @Id

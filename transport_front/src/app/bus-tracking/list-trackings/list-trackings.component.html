@@ -1,0 +1,44 @@
+<div class="container mt-4">
+    <h2>Buses Management</h2>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>{{'List of Bus Trackings' }}</h4>
+        </div>
+       
+    <div class="container mt-4">
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Total Buses</th>
+                <th>Buses On</th>
+                <th>Buses Off</th>
+                <th>On Time</th>
+                <th>Late</th>
+                <th>In Accident</th>
+                <th>Change of Line</th>
+                <th>Adding Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bus of busList">
+                <td>{{ bus.id }}</td>
+                <td>{{ bus.busState }}</td>
+                <td>{{ bus.busOn }}</td>
+                <td>{{ bus.busOff }}</td>
+                <td>{{ bus.busOnTime}}</td>
+                <td>{{ bus.busLate }}</td>
+                <td>{{ bus.busOnAccident}}</td>
+                <td>{{ bus.changeofLine }}</td>
+                <td>{{ bus.date | date:'short'}}</td>
+                <!--
+                <td>
+                    <button class="btn btn-warning btn-sm me-2" (click)="editBus(bus)">✏️</button>
+                </td>-->
+            </tr>
+        </tbody>
+    </table>
+    
+</div>

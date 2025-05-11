@@ -1,14 +1,65 @@
-/* bus-tracking.component.css */
-.table th {
-    background-color: #343a40;
-    color: white;
-  }
-  
-  .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-  }
-  
-  .card {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  }
+.sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.95);
+  /* Fond semi-transparent */
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(255, 255, 255, 1);
+
+}
+
+/* line-infos.component.css */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.feature-btn.active {
+  background: #007bff;
+  color: white;
+}
+
+.feature-btn {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 200px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.feature-btn i {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-btn span {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  /* Nécessaire pour positionner l'arrière-plan */
+}
+
+
+
+app-list-lines,
+app-add-infos {
+  position: relative;
+  z-index: 1;
+  /* Met le contenu au-dessus de l'arrière-plan */
+  background: rgba(255, 255, 255, 0.9);
+  /* Fond semi-transparent pour lisibilité */
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+  pointer-events: auto;
+}

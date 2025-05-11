@@ -1,0 +1,92 @@
+<div class="container mt-4">
+    <h2>Buses Management</h2>
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>{{ 'Add New Tracking' }}</h4>
+        </div>
+        <div class="card-body">
+            <form (submit)="addBus()">
+                <div class="row g-3">
+                    <!-- Champ État -->
+                    <div class="col-md-2">
+                        <label class="form-label">Total Buses</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busStateValue" 
+                            name="busState" required>
+                    </div>
+
+                    <!-- Champ Bus Actifs -->
+                    <div class="col-md-2">
+                        <label class="form-label">Buses On</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busOnValue" 
+                            name="busOn" required>
+                    </div>
+
+                    <!-- Champ Bus Inactifs -->
+                    <div class="col-md-2">
+                        <label class="form-label">Buses Off</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busOffValue" 
+                            name="busOff" required>
+                    </div>
+
+                    <!-- Champ À l'heure -->
+                    <div class="col-md-2">
+                        <label class="form-label">On Time</label>
+                        <input type="number" class="form-control" 
+                        [(ngModel)]="busOnTimeValue" 
+                        name="busOnTime" required>
+                            
+                    </div>
+
+                    <!-- Champ Retard -->
+                    <div class="col-md-2">
+                        <label class="form-label">Late</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="busLateValue" 
+                            name="busLate">
+                    </div>
+
+                    <!-- Champ Accident -->
+                    <div class="col-md-2">
+                        <label class="form-label">In Accident</label>
+                        <input type="number" class="form-control" 
+                        [(ngModel)]="busAccidentValue" 
+                        name="busOnAccident">                             
+                    </div>
+
+                    <!-- Champ Changement ligne -->
+                    <div class="col-md-2">
+                        <label class="form-label">Change of Line</label>
+                        <input type="number" class="form-control" 
+                            [(ngModel)]="changeLineValue" 
+                            name="changeofLine">
+                    </div>
+
+                    <!-- Champ Date d'Ajout -->
+                    <div class="col-md-2">
+                        <label class="form-label">Adding Time</label>
+                        <input type="datetime-local" class="form-control" 
+                            [(ngModel)]="dateValue" 
+                            name="date" disabled>
+                    </div>
+
+                    <!-- Bouton de soumission -->
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button 
+                            type="submit" 
+                            class="btn btn-primary w-100" 
+                            [disabled]="isSaving"
+                            >
+                            {{ selectedBus ? 'Update' : isSaving ? 'Sending...' : 'Add' }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div><br>
+    </div>
+    
+    
+</div>

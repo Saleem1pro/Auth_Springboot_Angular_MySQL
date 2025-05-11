@@ -1,0 +1,108 @@
+.main-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.bus-logo {
+    width: 50px;
+    height: 38px;
+    margin-bottom: 3rem;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    object-fit: contain;
+    border-radius: 25px;
+    position: absolute;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.feature-btn {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 200px;
+}
+
+.feature-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #3f51b5, #2196f3);
+    color: white;
+}
+
+.feature-btn i {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-btn span {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .bus-logo {
+        width: 200px;
+        height: 100px;
+    }
+}
+
+.logout-btn {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 3px;
+    width: 120px;
+    margin-bottom: 40px;
+
+}
+
+.logout-btn:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #3f51b5, #2196f3);
+    color: white;
+}
+
+.logout-btn i {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.logout-btn span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+}

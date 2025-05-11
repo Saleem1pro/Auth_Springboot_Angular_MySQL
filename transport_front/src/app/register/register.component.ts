@@ -40,6 +40,9 @@ export class RegisterComponent {
     this.showPassword = !this.showPassword;
 }
 
+logoClick(){
+  location.reload();
+}
   onSubmitRegister(): void {
     this.axiosService.request('POST', '/api/auth/register', {
       firstName: this.registerFirstName,

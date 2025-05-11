@@ -74,6 +74,15 @@
     box-shadow: none;
 }
 
+.bus-logo{
+    width: 50px;
+        height: 38px;
+        margin-bottom: 3rem;
+        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+        object-fit: contain; 
+        border-radius: 25px;
+        margin: 15px 0 15px 250px;
+}
 /* Boutons */
 .btn-primary {
     width: 100%;

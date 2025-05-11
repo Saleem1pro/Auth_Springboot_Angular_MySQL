@@ -16,6 +16,10 @@ export class WelcomeComponent {
     private router: Router
   ){
 }
+logoClick(){
+  location.reload();
+}
+
 onReclamation() {
   this.router.navigate(['/reclamation']);
 }
@@ -26,5 +30,7 @@ onBusTracking() :void{
   this.router.navigate(['/bus-tracking']);
 
 }
-
+onLogOut() {
+  this.router.navigate(['/']);
+}
 }

@@ -71,7 +71,9 @@ export class LoginComponent {
       password: this.password
     });
   }
-
+  logoClick(){
+    location.reload();
+  }
   onSubmitRegister(): void {
     this.onSubmitRegisterEvent.emit({
       firstName: this.registerFirstName,

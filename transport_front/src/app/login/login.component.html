@@ -1,5 +1,8 @@
 <div class="row justify-content-center">
+
     <div class="col-4">
+        <img class="bus-logo" (click)="logoClick()" src="../../assets/bus_logo.png">
+
         <ul class="nav nav-pills nav justify-content-center" id="ex1" role="tablist">
             <li class="nav-item" role="presentation">
                 <button [ngClass]="active == 'login' ? 'nav-link active' : 'nav-link'" 

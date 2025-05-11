@@ -2,10 +2,10 @@
 export class LineInfos {
     constructor(
       public id: number,
-      public line_number: number,
-      public number_of_buses: number,
+      public lineNumber: number,
+      public numberOfBuses: number,
       public working: number,
-      public not_working: number,
+      public notWorking: number,
       public date: Date,
       //public user_id: number
     ) {}

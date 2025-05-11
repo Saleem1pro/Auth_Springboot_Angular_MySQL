@@ -1,0 +1,33 @@
+
+<div class="container mt-4">
+
+    <div class="card mt-4">
+        <div class="card-header">
+            <h4>{{ 'List Of Lines' }}</h4>
+        </div>
+    </div><br>
+</div>
+<div class="container mt-4">
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>ID</th>
+        <th>Number of Line</th>
+        <th>Numbre of Buses</th>
+        <th>Working Buses</th>
+        <th>Not Working Buses</th>
+        <th>Adding Time</th>
+    </tr>
+</thead>
+    <tr *ngFor="let line of lineInfosList">
+      <td>{{ line.id }}</td>
+      <td>{{ line.lineNumber }}</td>
+      <td>{{ line.numberOfBuses }}</td>
+      <td>{{ line.working }}</td>
+      <td>{{ line.notWorking }}</td>
+      <td>{{ line.date | date:'short' }}</td>
+    </tr>
+  </table>
+  
+    
+</div>

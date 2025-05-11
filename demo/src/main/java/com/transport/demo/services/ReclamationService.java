@@ -34,9 +34,11 @@ public class ReclamationService {
     public ReclamationDTO create(ReclamationDTO dto) {
         Reclamation r = Reclamation.builder()
                 .date(LocalDateTime.now())
-                .clientInfo(dto.getClientInfo())
+                .fullName(dto.getFullName())
+                .CIN(dto.getCIN())
+                .phoneNumber(dto.getPhoneNumber())
+                .ticketNumber(dto.getTicketNumber())
                 .state(dto.getState())
-                .title(dto.getTitle())
                 .description(dto.getDescription())
                 .build();
         return toDTO(repository.save(r));
@@ -57,9 +59,11 @@ public class ReclamationService {
         return ReclamationDTO.builder()
                 .id(rec.getId())
                 .date(LocalDate.from(rec.getDate()))
-                .clientInfo(rec.getClientInfo())
+                .fullName(rec.getFullName())
+                .CIN(rec.getCIN())
+                .phoneNumber(rec.getPhoneNumber())
+                .ticketNumber(rec.getTicketNumber())
                 .state(rec.getState())
-                .title(rec.getTitle())
                 .description(rec.getDescription())
                 .build();
     }
